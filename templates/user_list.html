@@ -1,0 +1,5 @@
+{% for user in user_list %}
+    <h2>email:{{ user.email }}</h2>
+    <p>name:{{ user.name }}</p>
+    <p>time:{{ user.created_at }}</p>
+{% endfor %}
