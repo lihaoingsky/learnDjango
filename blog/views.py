@@ -30,6 +30,7 @@ def blogs_by_category(request, id):
 
 def blog_detail(request, id):
     blog = get_object_or_404(Blog,id=id)
+    blog.increase_view_times()
     #支持markdown
     blog.content = markdown.markdown(blog.content,
                                   extensions=[
