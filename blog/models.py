@@ -6,10 +6,12 @@ import markdown
 
 
 class Category(models.Model):
-    #分类 Category
+    # 分类 Category
     name = models.CharField(max_length=100)
+
     def __str__(self):
         return self.name
+
 
 
 class Tag(models.Model):
@@ -37,7 +39,7 @@ class Blog(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('django_web:blog_detail', kwargs={'id':self.id })
+        return reverse('blog:blog_detail', kwargs={'id':self.id })
 
     def increase_view_times(self):
         self.view_times += 1
